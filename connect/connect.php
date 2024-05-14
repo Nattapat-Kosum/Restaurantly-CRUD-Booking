@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username= "root";
 $password= "";
-$dbname = "test_resdb";
+$dbname = "restaurantly_db";
 $dsn = "mysql:host=$servername;dbname=$dbname;charet=utf8";
 
 
