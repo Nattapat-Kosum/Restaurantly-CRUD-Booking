@@ -31,9 +31,9 @@
           $count++;
           $sql2 = $conn->query("UPDATE book_a_table SET Cus_que = '$count' WHERE id=".$data['id']);
 
-          echo $data['date_book'];
-          echo $data['startime'];
-          echo "&nbsp;&nbsp;&nbsp;&nbsp;".$count."<br>";
+          // echo $data['date_book'];
+          // echo $data['startime'];
+          // echo "&nbsp;&nbsp;&nbsp;&nbsp;".$count."";
         }
       }
 

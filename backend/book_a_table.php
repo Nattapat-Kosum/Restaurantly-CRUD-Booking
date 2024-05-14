@@ -28,10 +28,10 @@
             <div class="content-main">
 
                 <!--banner-->
-                <div class="banner">
+                <div class="banner mt-5">
                     <h2>
                         <i class="fa fa-angle-right"></i>
-                        <span>book a table</span>
+                        <span>book a tabled</span>
                     </h2>
                 </div>
 
