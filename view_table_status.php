@@ -52,15 +52,20 @@
                         initialDate: '<?php echo $datetoday; ?>',
                         weekNumbers: true,
                         navLinks: true, // can click day/week names to navigate views
-                        editable: true,
-                        selectable: true,
+                        editable: false,
+                        selectable: false,
                         nowIndicator: true,
                         dayMaxEvents: true, // allow "more" link when too many events
                         // showNonCurrentDates: false,
+                        eventResizable: false,
+                        eventDraggable: false,
+                        eventStartEditable: false,
+                        eventDurationEditable: false,
+
 
                         events: [
                             <?php foreach ($rows as $row ) { ?> {
-                                title: '<?php echo $row['tablebooking']; ?> Full',
+                                title: '<?php echo $row['tablebooking']; ?> time <?php echo $row['startime']; ?> to <?php echo $row['endtime']; ?> already booking',
                                 start: '<?php echo $row['date_book'];  ?>',
                                 end: ''
                             },
@@ -86,6 +91,7 @@
         <?php case ($_GET['action'] == 'th'); 
             $sql = $conn->query("SELECT * FROM book_a_table");
             $rows = $sql->fetchAll(PDO::FETCH_ASSOC);
+            // var_dump($rows);
         ?>
 
         <section id="checktable" class="checktable">
@@ -112,17 +118,22 @@
                             initialDate: '<?php echo $datetoday; ?>',
                             weekNumbers: true,
                             navLinks: true, // can click day/week names to navigate views
-                            editable: true,
-                            selectable: true,
+                            editable: false,
+                            selectable: false,
                             nowIndicator: true,
                             dayMaxEvents: true, // allow "more" link when too many events
                             // showNonCurrentDates: false,
+                            eventResizable: false,
+                            eventDraggable: false,
+                            eventStartEditable: false,
+                            eventDurationEditable: false,
+
+                            
 
                             events: [
                                 <?php foreach ($rows as $row ) { ?> {
-                                    title: '<?php echo $row['tablebooking']; ?> ไม่ว่างขณะนี้',
-                                    start: '<?php echo $row['date_book'];  ?>',
-                                    end: ''
+                                    title: '<?php echo $row['tablebooking']; ?> เวลา <?php echo $row['startime']; ?> ถึง <?php echo $row['endtime']; ?> ถูกจองแล้ว',
+                                    start: '<?php echo $row['date_book']; ?>',
                                 },
                                 <?php } ?>
                             ]
@@ -170,15 +181,22 @@
                                 initialDate: '<?php echo $datetoday; ?>',
                                 weekNumbers: true,
                                 navLinks: true, // can click day/week names to navigate views
-                                editable: true,
-                                selectable: true,
+                                editable: false,
+                                selectable: false,
                                 nowIndicator: true,
                                 dayMaxEvents: true, // allow "more" link when too many events
                                 // showNonCurrentDates: false,
+                                eventResizable: false,
+                                eventDraggable: false,
+                                eventStartEditable: false,
+                                eventDurationEditable: false,
+
+
+
 
                                 events: [
                                     <?php foreach ($rows as $row ) { ?> {
-                                        title: '<?php echo $row['tablebooking']; ?> Full',
+                                        title: '<?php echo $row['tablebooking']; ?> time <?php echo $row['startime']; ?> to <?php echo $row['endtime']; ?> already booking',
                                         start: '<?php echo $row['date_book'];  ?>',
                                         end: ''
                                     },
