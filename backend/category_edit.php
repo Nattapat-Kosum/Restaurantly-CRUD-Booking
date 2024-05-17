@@ -43,7 +43,7 @@
                 <div class="grid-form">
                     <div class="grid-form1">
                         <h3 id="forms-example" class="">Category Edit</h3>
-                        <form form method="POST" action="add_class.php?action=categoryedit">
+                        <form method="POST" action="add_class.php?action=categoryedit">
                             <div class="form-group">
                                 <label for="exampleInputcategory1">Category Name</label>
                                 <input type="text" class="form-control" id="exampleInputcategory1" name="category_name_edit" placeholder="" value="<?php echo $row['cate_name']; ?>">
@@ -83,7 +83,7 @@
                                 <div class="grid-form">
                                     <div class="grid-form1">
                                         <h3 id="forms-example" class="">แก้ไขประเภทสินค้า</h3>
-                                        <form form method="POST" action="add_class_th.php?action=categoryedit_th">
+                                        <form method="POST" action="add_class_th.php?action=categoryedit_th">
                                             <div class="form-group">
                                                 <label for="exampleInputcategory1">ชื่อประเภทสินค้า</label>
                                                 <input type="text" class="form-control" id="exampleInputcategory1" name="category_name_edit" placeholder="" value="<?php echo $row['cate_name_th']; ?>">
