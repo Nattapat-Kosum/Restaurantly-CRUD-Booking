@@ -82,7 +82,7 @@ $rend = randtext(6);
                       // include '../backend/mail.php';
 
                   header("location: ../customer_detail.php?action=en&id=".$id);
-                  exit();
+                  // exit();
 
                   include '../backend/Line_Notify.php'; //เรียกใช้ Line Notify API ส่งข้อความไปใน Line
                   
