@@ -57,30 +57,41 @@ $rend = randtext(6);
                         echo '<script>window.history.back()</script>';
                         
             }else {   
-              $sql = $conn->prepare("INSERT INTO book_a_table (name_user, user_email, user_phone, date_book, startime, alert_time, endtime, of_people, tablebooking, user_message, Cus_status, color, booking_code, Cus_que)
-              VALUES (:username1, :useremail1, :UserPhone1, '$date_book', :timeBook, '$timeup2', '$timeup', :people, :selector, :messageUser, :statusBook, :color, '$rend', '')");
-
-              $sql->bindParam(':username1', $name_user);
-              $sql->bindParam(':useremail1', $user_email);
-              $sql->bindParam(':UserPhone1', $user_phone);
-              $sql->bindParam(':timeBook', $startime);
-              $sql->bindParam(':people', $of_people);
-              $sql->bindParam(':selector', $tablebooking);
-              $sql->bindParam(':messageUser', $user_message);
-              $sql->bindParam(':statusBook', $Cus_status);
-              $sql->bindParam(':color', $color);
-
-              $sql->execute();
+              
+                 $sql = $conn->prepare("INSERT INTO book_a_table (name_user, user_email, user_phone, date_book, startime, alert_time, endtime, of_people, tablebooking, user_message, Cus_status, color, booking_code, Cus_que)
+                 VALUES (:username1, :useremail1, :UserPhone1, :date_book, :timeBook, :timeup2, :timeup, :people, :selector, :messageUser, :statusBook, :color, :rend, 0)");
                 
-                $id = $conn->lastInsertId();
-                
-                // include '../backend/mail.php';
+                  $sql->bindParam(':date_book', $date_book);
+                  $sql->bindParam(':timeup2', $timeup2);
+                  $sql->bindParam(':timeup', $timeup);
+                  $sql->bindParam(':rend', $rend);
+                  $sql->bindParam(':username1', $name_user);
+                  $sql->bindParam(':useremail1', $user_email);
+                  $sql->bindParam(':UserPhone1', $user_phone);
+                  $sql->bindParam(':timeBook', $startime);
+                  $sql->bindParam(':people', $of_people);
+                  $sql->bindParam(':selector', $tablebooking);
+                  $sql->bindParam(':messageUser', $user_message);
+                  $sql->bindParam(':statusBook', $Cus_status);
+                  $sql->bindParam(':color', $color);
 
-                header("location: ../customer_detail.php?action=en&id=".$id);
+                  $sql->execute();
+              
+                  $id = $conn->lastInsertId();
+                  
+                      // include '../backend/mail.php';
 
-                include '../backend/Line_Notify.php'; //เรียกใช้ Line Notify API ส่งข้อความไปใน Line
+                  header("location: ../customer_detail.php?action=en&id=".$id);
+                  exit();
+
+                  include '../backend/Line_Notify.php'; //เรียกใช้ Line Notify API ส่งข้อความไปใน Line
+                  
+
       }
     }
            
+			
+  //exit();
+
 
 ?>
